@@ -1,0 +1,36 @@
+# Development Environment Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/maintenance_dev
+    username: postgres
+    password: password
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  logging:
+    level:
+      com.ideas2it.maintenanceservice: DEBUG
+      org.springframework.security: DEBUG
+      org.hibernate.SQL: DEBUG
+
+# Development AWS Configuration (use localstack or mock for development)
+app:
+  aws:
+    s3:
+      bucket: maintenance-dev-bucket
+    access-key-id: dev-access-key
+    secret-access-key: dev-secret-key
+    region: us-east-1
+
+# Development JWT Configuration
+app:
+  jwt:
+    secret: dev-jwt-secret-key-for-development-only
+    expiration: 86400000
+
+# Development File Upload Configuration
+app:
+  file-upload:
+    max-size: 5242880 # 5MB for development
+    allowed-types: image/*,application/pdf,text/plain 

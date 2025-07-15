@@ -1,0 +1,8 @@
+graph TD
+  A["Employee/End User (Browser)"] -- "HTTP/HTTPS" --> B["React Frontend"]
+  B -- "REST API" --> C["Java Backend (Spring Boot)"]
+  C -- "JDBC/JPA" --> D["Relational Database (PostgreSQL)"]
+  C -- "File Upload/Download" --> E["File Storage"]
+  C -- "Email/Push" --> F["Notification Service"]
+  C -- "Auth/SSO" --> G["Company Auth Provider"]
+  B -- "WebSocket/HTTP Polling" --> C 
